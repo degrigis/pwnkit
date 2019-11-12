@@ -2,7 +2,7 @@ from pwn import *
 import sys
 
 # CONTEXT, BABY.
-context.terminal = ['urxvt', '-e', 'sh', '-c']
+#context.terminal = ['urxvt', '-e', 'sh', '-c']
 context.log_level = "DEBUG"
 context.arch = "i386"
 #context.arch = "amd64"
@@ -21,7 +21,7 @@ def make_remote():
     if REMOTE:
         r = remote(HOST, PORT)
     elif DEBUG:
-        r = debug(THE_THING.split(" "), get_breakpoints())
+        r = gdb.debug(THE_THING.split(" "), get_breakpoints())
         #r = gdb.debug(BINARY_NAME, get_breakpoints() + custom_gdbscript)
     else:
         r = process(THE_THING.split(" "))
