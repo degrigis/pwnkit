@@ -2,7 +2,7 @@ import os
 import sys
 import shutil
 
-# FUN FACT: sed -i 's/sleep/isinf/g' <binary_name>
+# FUN FACT: sed -i 's/alarm/isinf/g' <binary_name>
 def patch_binary(binary_path):
 
     def patch(data):
